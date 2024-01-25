@@ -1,0 +1,113 @@
+/* 0. Root CSS */
+
+:root {
+  --brand-primary: hsla(245, 90%, 31%);
+  --brand-light-shade: hsla(4, 21%, 85%, 0.5);
+  --brand-dark-shade: #16101b;
+  --brand-light-accent: #588bb4;
+  --brand-dark-accent: #405387;
+
+  --brand-gradient-primary: linear-gradient(
+    180deg,
+    var(--brand-primary) 0%,
+    var(--brand-light-accent) 100%
+  );
+
+  --font-primary: "Lato", sans-serif;
+
+  font-family: var(--font-primary);
+}
+
+/* 1. Navigation CSS */
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 1.2 Logo + Links */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+}
+
+.links > li {
+  padding: 1rem;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 2. Main CSS */
+
+.main {
+  outline: 0.1rem solid red;
+}
+
+/* 2.1 Intro */
+
+.intro-container {
+  display: flex;
+  outline: 0.1rem solid blue;
+  background-color: var(--brand-light-shade);
+  color: var(--brand-primary);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 32rem;
+}
+
+.title-container {
+}
+
+.title {
+  font-size: 1.25rem;
+
+  em {
+    font-size: 1.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+em {
+  font-weight: bold;
+}
+
+.text-container {
+  padding: 0.25rem;
+}
+
+.image-container {
+  max-width: 20rem;
+}
+
+/* 3. Socials CSS */
+
+.socials-container {
+}
+
+.socials-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* 4. Projects */
