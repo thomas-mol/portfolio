@@ -1,11 +1,12 @@
 /* 0. Root CSS */
 
 :root {
-  --brand-primary: hsla(245, 90%, 31%);
-  --brand-light-shade: hsla(4, 21%, 85%, 0.5);
+  --brand-primary: #140896;
+  --brand-light-shade: #fef6ff;
   --brand-dark-shade: #16101b;
-  --brand-light-accent: #588bb4;
-  --brand-dark-accent: #405387;
+  --brand-light-accent: #9a89b4;
+  --brand-dark-accent: #4a4453;
+  --brand-secondary: #66baa8;
 
   --brand-gradient-primary: linear-gradient(
     180deg,
@@ -48,16 +49,15 @@ a {
 /* 2. Main CSS */
 
 .main {
-  outline: 0.1rem solid red;
+  /* outline: 0.1rem solid red; */
 }
 
 /* 2.1 Intro */
 
 .intro-container {
+  padding-top: 1rem;
   display: flex;
-  outline: 0.1rem solid blue;
   background-color: var(--brand-light-shade);
-  color: var(--brand-primary);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -70,14 +70,12 @@ a {
   max-width: 32rem;
 }
 
-.title-container {
-}
-
 .title {
   font-size: 1.25rem;
 
   em {
     font-size: 1.5rem;
+    color: var(--brand-secondary);
   }
 }
 
@@ -96,17 +94,35 @@ em {
 
 .image-container {
   max-width: 20rem;
+
+  img {
+    opacity: 0.85;
+  }
+}
+
+/* 2.2 Contact Button */
+
+.button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: white;
+  background-color: var(--brand-secondary);
+  border-radius: 0.25rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
 }
 
 /* 3. Socials CSS */
 
 .socials-container {
+  color: var(--brand-secondary);
 }
 
 .socials-links {
+  padding-top: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
 }
 
