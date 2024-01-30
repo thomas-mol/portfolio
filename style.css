@@ -1,17 +1,17 @@
 /* 0. Root CSS */
 
 :root {
-  --brand-primary: #140896;
-  --brand-light-shade: #fef6ff;
-  --brand-dark-shade: #16101b;
-  --brand-light-accent: #9a89b4;
-  --brand-dark-accent: #4a4453;
-  --brand-secondary: #66baa8;
+  --theme-primary: #140896;
+  --theme-light-shade: #e0e2ff;
+  --theme-dark-shade: #16101b;
+  --theme-light-accent: #f7f7f7;
+  --theme-dark-accent: #4a4453;
+  --theme-secondary: #66baa8;
 
-  --brand-gradient-primary: linear-gradient(
+  --theme-gradient-primary: linear-gradient(
     180deg,
-    var(--brand-primary) 0%,
-    var(--brand-light-accent) 100%
+    var(--theme-primary) 0%,
+    var(--theme-light-accent) 100%
   );
 
   --font-primary: "Lato", sans-serif;
@@ -48,16 +48,17 @@ a {
 
 /* 2. Main CSS */
 
-.main {
-  /* outline: 0.1rem solid red; */
+main {
+  background-color: var(--theme-light-accent);
 }
 
 /* 2.1 Intro */
 
 .intro-container {
-  padding-top: 1rem;
+  position: relative;
   display: flex;
-  background-color: var(--brand-light-shade);
+  gap: 4rem;
+  background-color: hsl(0, 0%, 100%, 0.6);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -66,7 +67,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   max-width: 32rem;
 }
 
@@ -75,7 +76,7 @@ a {
 
   em {
     font-size: 1.5rem;
-    color: var(--brand-secondary);
+    color: var(--theme-primary);
   }
 }
 
@@ -84,19 +85,16 @@ a {
   font-style: italic;
 }
 
-em {
-  font-weight: bold;
-}
-
-.text-container {
-  padding: 0.25rem;
+.button-container {
+  display: flex;
+  gap: 1rem;
 }
 
 .image-container {
   max-width: 20rem;
 
   img {
-    opacity: 0.85;
+    border-radius: 50%;
   }
 }
 
@@ -107,23 +105,35 @@ em {
   outline: 0;
   cursor: pointer;
   color: white;
-  background-color: var(--brand-secondary);
+  background-color: var(--theme-primary);
   border-radius: 0.25rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
+
+  &:hover {
+    color: var(--theme-primary);
+    background-color: var(--theme-light-shade);
+  }
 }
 
 /* 3. Socials CSS */
 
 .socials-container {
-  color: var(--brand-secondary);
+  color: var(--theme-primary);
 }
 
 .socials-links {
-  padding-top: 2rem;
   display: flex;
+  padding-top: 2rem;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
 
-/* 4. Projects */
+/* 4. Canvas CSS */
+
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
