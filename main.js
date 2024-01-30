@@ -32,7 +32,7 @@ class Effect {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
     this.particles = [];
-    this.numberOfParticles = 40;
+    this.numberOfParticles = Math.floor(this.width / 20);
     this.createParticles();
   }
 

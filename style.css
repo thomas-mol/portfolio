@@ -6,13 +6,6 @@
   --theme-dark-shade: #16101b;
   --theme-light-accent: #f7f7f7;
   --theme-dark-accent: #4a4453;
-  --theme-secondary: #66baa8;
-
-  --theme-gradient-primary: linear-gradient(
-    180deg,
-    var(--theme-primary) 0%,
-    var(--theme-light-accent) 100%
-  );
 
   --font-primary: "Lato", sans-serif;
 
@@ -24,6 +17,7 @@
 .navigation {
   display: flex;
   justify-content: space-around;
+  background-color: rgb(224, 226, 255, 0.4);
 }
 
 /* 1.2 Logo + Links */
@@ -44,6 +38,11 @@
 
 a {
   text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: var(--theme-light-accent);
+  }
 }
 
 /* 2. Main CSS */
@@ -55,8 +54,9 @@ main {
 /* 2.1 Intro */
 
 .intro-container {
-  position: relative;
   display: flex;
+  position: relative;
+  height: 40rem;
   gap: 4rem;
   background-color: hsl(0, 0%, 100%, 0.6);
   flex-wrap: wrap;
@@ -91,7 +91,9 @@ main {
 }
 
 .image-container {
+  display: flex;
   max-width: 20rem;
+  align-items: center;
 
   img {
     border-radius: 50%;
@@ -104,29 +106,40 @@ main {
   border: 0;
   outline: 0;
   cursor: pointer;
-  color: white;
+  color: var(--theme-light-accent);
   background-color: var(--theme-primary);
-  border-radius: 0.25rem;
+  border-radius: 1em;
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
+  transition: all 0.3s;
 
   &:hover {
     color: var(--theme-primary);
     background-color: var(--theme-light-shade);
   }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 /* 3. Socials CSS */
-
-.socials-container {
-  color: var(--theme-primary);
-}
 
 .socials-links {
   display: flex;
   padding-top: 2rem;
   flex-wrap: wrap;
   gap: 1.5rem;
+}
+
+.socials-links > i {
+  color: var(--theme-primary);
+  opacity: 0.5;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 }
 
 /* 4. Canvas CSS */
