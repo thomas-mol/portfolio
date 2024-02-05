@@ -17,7 +17,8 @@
 .navigation {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(224, 226, 255, 0.4);
+  background-color: transparent;
+  padding: 1rem 0;
 }
 
 /* 1.2 Logo + Links */
@@ -41,14 +42,35 @@ a {
   color: black;
 
   &:hover {
-    color: var(--theme-light-accent);
+    text-decoration: underline;
+  }
+}
+
+.mobile-link-container {
+  display: none;
+}
+
+.mobile-links {
+  display: none;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .link-container {
+    display: none;
+  }
+
+  .mobile-link-container {
+    display: flex;
   }
 }
 
 /* 2. Main CSS */
 
-main {
+.main {
   background-color: var(--theme-light-accent);
+  container-type: size;
+  container-name: main;
 }
 
 /* 2.1 Intro */
@@ -56,11 +78,17 @@ main {
 .intro-container {
   display: flex;
   position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
   height: 40rem;
   gap: 4rem;
   background-color: hsl(0, 0%, 100%, 0.6);
-  flex-wrap: wrap;
-  justify-content: center;
+}
+
+@container main (max-width: 650px) {
+  .intro-container > .card {
+    padding-top: 4rem;
+  }
 }
 
 .card {
