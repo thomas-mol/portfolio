@@ -1,12 +1,26 @@
+/* TABLE OF CONTENTS
+ — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — /
+0 - Root + Body + Variables
+1 - Navigation
+1.1 - Logo + Links
+1.2 - Mobile Links + Hamburger Menu
+2 - Main
+2.1 - Intro
+2.1.1 - Card
+2.1.2 - Buttons
+2.1.3 - Socials
+2.2 - Canvas
+*/
+
 /* 0. Root CSS */
 
 :root {
   --theme-primary: rgb(20, 8, 150);
   --theme-primary-opaque: rgb(20, 8, 150, 0.33);
-  --theme-light-shade: #e0e2ff;
-  --theme-dark-shade: #16101b;
-  --theme-light-accent: #f7f7f7;
-  --theme-dark-accent: #4a4453;
+  --theme-light-shade: rgb(224, 226, 255);
+  --theme-dark-shade: rgb(22, 16, 27);
+  --theme-light-accent: rgb(247, 247, 247);
+  --theme-dark-accent: rgb(74, 68, 83);
 
   --font-primary: "Lato", sans-serif;
 
@@ -40,7 +54,7 @@ body {
   }
 } */
 
-/* 1.0 Navigation CSS */
+/* 1 Navigation CSS */
 
 .navigation {
   display: flex;
@@ -63,15 +77,42 @@ body {
 
 .links > li {
   padding: 1rem;
-  list-style: none;
-}
 
-a {
-  text-decoration: none;
-  color: black;
-
-  &:hover {
-    text-decoration: underline;
+  a {
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  a:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 0.25rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: linear-gradient(90deg, var(--theme-primary), rgba(0, 0, 0, 0));
+    transition: 0.3s;
+  }
+  a:after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: "";
+    width: 0%;
+    height: 0.25rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--theme-primary));
+    transition: 0.3s;
+  }
+  &:hover a:before {
+    transform: translateX(99%);
+    width: 50%;
+  }
+  &:hover a:after {
+    transform: translateX(-99%);
+    width: 50%;
   }
 }
 
@@ -79,6 +120,7 @@ a {
 
 .icon-container {
   z-index: 2;
+  cursor: pointer;
 
   i {
     color: var(--theme-primary);
@@ -96,7 +138,12 @@ a {
   height: 100%;
   width: 100%;
   padding-top: 10rem;
-  background-color: hsla(245, 90%, 20%, 0.9);
+  /* background-color: rgb(224, 226, 255, 0.99); */
+  background: linear-gradient(
+    white 0%,
+    white 33%,
+    var(--theme-primary-opaque) 100%
+  );
   overflow-y: hidden;
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.5, 0.15, 0.3, 1);
@@ -119,8 +166,19 @@ a {
   text-decoration: none;
   text-align: center;
   font-size: 2rem;
+
+  border-width: 0.25rem;
+  border-style: solid;
+  border-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 20%,
+      var(--theme-primary-opaque) 50%,
+      rgba(0, 0, 0, 0) 80%
+    )
+    0 0 100% 0;
+
   a {
-    color: var(--theme-light-accent);
+    color: var(--theme-primary);
   }
 }
 
@@ -134,7 +192,7 @@ a {
   }
 }
 
-/* 2.0 Main CSS */
+/* 2. Main CSS */
 
 .main {
   display: flex;
@@ -156,7 +214,7 @@ a {
   gap: 10vw;
   background: linear-gradient(
     transparent 0%,
-    transparent 50%,
+    transparent 33%,
     var(--theme-primary-opaque) 100%
   );
 }
@@ -166,6 +224,8 @@ a {
     padding-top: 4rem;
   }
 }
+
+/* 2.1.1 Card */
 
 .card {
   display: flex;
@@ -179,7 +239,7 @@ a {
   font-size: 1.25rem;
 
   em {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--theme-primary);
   }
 }
@@ -189,11 +249,6 @@ a {
   font-style: italic;
 }
 
-.button-container {
-  display: flex;
-  gap: 1rem;
-}
-
 .image-container {
   display: flex;
   max-width: 20rem;
@@ -201,11 +256,15 @@ a {
 
   img {
     border-radius: 50%;
-    filter: brightness(0%);
   }
 }
 
-/* 2.2 Buttons */
+/* 2.1.2 Buttons */
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
 
 .button {
   border: 0;
@@ -230,7 +289,7 @@ a {
   }
 }
 
-/* 2.3 Socials CSS */
+/* 2.1.3 Socials CSS */
 
 .socials-links {
   display: flex;
@@ -249,7 +308,7 @@ a {
   }
 }
 
-/* 3. Canvas CSS */
+/* 2.2 Canvas CSS */
 
 #canvas1 {
   position: absolute;
