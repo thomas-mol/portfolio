@@ -2,6 +2,7 @@
 
 :root {
   --theme-primary: rgb(20, 8, 150);
+  --theme-primary-opaque: rgb(20, 8, 150, 0.33);
   --theme-light-shade: #e0e2ff;
   --theme-dark-shade: #16101b;
   --theme-light-accent: #f7f7f7;
@@ -11,6 +12,33 @@
 
   font-family: var(--font-primary);
 }
+
+body {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+}
+
+/* @media screen and (min-width: 800px) {
+  body::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(20, 8, 150, 0.5);
+    clip-path: polygon(
+      50% 75%,
+      75% 85%,
+      100% 70%,
+      100% 100%,
+      0 100%,
+      15% 80%,
+      35% 90%
+    );
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+} */
 
 /* 1.0 Navigation CSS */
 
@@ -109,7 +137,9 @@ a {
 /* 2.0 Main CSS */
 
 .main {
-  background-color: var(--theme-light-accent);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   container-type: size;
   container-name: main;
 }
@@ -119,11 +149,16 @@ a {
 .intro-container {
   display: flex;
   position: relative;
+  flex-grow: 1;
   flex-wrap: wrap;
   justify-content: center;
   height: 40rem;
-  gap: 4rem;
-  background-color: hsl(0, 0%, 100%, 0.6);
+  gap: 10vw;
+  background: linear-gradient(
+    transparent 0%,
+    transparent 50%,
+    var(--theme-primary-opaque) 100%
+  );
 }
 
 @container main (max-width: 650px) {
@@ -166,10 +201,11 @@ a {
 
   img {
     border-radius: 50%;
+    filter: brightness(0%);
   }
 }
 
-/* 2.2 Contact Button */
+/* 2.2 Buttons */
 
 .button {
   border: 0;
@@ -178,6 +214,8 @@ a {
   color: var(--theme-light-accent);
   background-color: var(--theme-primary);
   border-radius: 1em;
+  box-shadow: 0.1rem 0.15rem var(--theme-primary-opaque);
+  font-size: 1.25rem;
   font-weight: 500;
   padding: 0.5em 1em;
   transition: all 0.3s;
