@@ -199,11 +199,9 @@ body {
   flex-grow: 1;
   flex-wrap: wrap;
   justify-content: center;
-  height: 40rem;
   padding: 0 0.5rem;
   gap: 10vw;
   background: linear-gradient(
-    transparent 0%,
     transparent 33%,
     var(--theme-primary-opaque) 100%
   );
@@ -232,12 +230,9 @@ body {
 }
 
 .title {
-  /* font-size: 1.25rem; */
-
-  em {
-    font-size: 2.25rem;
-    color: var(--theme-primary);
-  }
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--theme-primary);
 }
 
 .subtitle {
@@ -272,7 +267,7 @@ body {
   border: 0.1rem solid transparent;
   font-size: 1.25rem;
   padding: 0.5em 1em;
-  transition: all 0.3s;
+  transition: transform 0.3s;
 
   &:hover {
     box-shadow: 0 0.175rem var(--theme-primary-opaque);
@@ -280,7 +275,7 @@ body {
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.975);
   }
 }
 
@@ -307,7 +302,7 @@ body {
   gap: 1.5rem;
 }
 
-.socials-links > i {
+.socials-links > a {
   color: var(--theme-primary);
   opacity: 0.5;
 
