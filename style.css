@@ -1,15 +1,15 @@
 /* TABLE OF CONTENTS
  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — /
-0 - Root + Body + Variables
+0 - Root + Variables
 1 - Navigation
 1.1 - Logo + Links
 1.2 - Mobile Links + Hamburger Menu
-2 - Main
+2 - Body
 2.1 - Intro
 2.1.1 - Card
 2.1.2 - Buttons
 2.1.3 - Socials
-2.2 - Canvas
+2.3 - About
 */
 
 /* 0. Root CSS */
@@ -24,21 +24,28 @@
 
   --font-primary: "Space Grotesk", sans-serif;
 
+  --nav-height: 4.5rem;
+
   font-family: var(--font-primary);
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* 1 Navigation CSS */
 
 .navigation {
   display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
   justify-content: space-between;
-  background-color: transparent;
+  background-color: #fff;
+  box-shadow: 0 0.0625rem 0.25rem rgba(146, 161, 176, 0.3);
   padding: 0 2rem;
 }
 
@@ -47,20 +54,16 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  z-index: 2;
 
   img {
-    height: 8rem;
+    height: var(--nav-height);
   }
 }
 
-.link-container {
-  display: flex;
-  align-items: center;
-}
-
+.link-container,
 .links {
   display: flex;
+  align-items: center;
 }
 
 .links > li {
@@ -68,8 +71,9 @@ body {
 
   a {
     position: relative;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
   }
+  /* Hover Animation */
   a:before {
     position: absolute;
     bottom: 0;
@@ -181,14 +185,15 @@ body {
   }
 }
 
-/* 2. Main CSS */
+/* 2. Body CSS */
 
-.main {
+body {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  container-type: size;
-  container-name: main;
+}
+
+section {
+  min-height: 100vh;
 }
 
 /* 2.1 Intro */
@@ -196,21 +201,15 @@ body {
 .intro-container {
   display: flex;
   position: relative;
-  flex-grow: 1;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding-top: var(--nav-height);
+  padding: inherit 0.5rem;
   gap: 10vw;
   background: linear-gradient(
     transparent 33%,
     var(--theme-primary-opaque) 100%
   );
-}
-
-@container main (max-width: 650px) {
-  .intro-container > .card {
-    padding-top: 4rem;
-  }
 }
 
 /* 2.1.1 Card */
@@ -223,31 +222,24 @@ body {
   max-width: 32rem;
 }
 
-@media screen and (min-width: 900px) {
-  .card {
-    align-items: center;
-  }
-}
-
 .title {
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
   font-weight: 600;
   color: var(--theme-primary);
 }
 
 .subtitle {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 1vw, 1.5rem);
   font-style: italic;
 }
 
-.image-container {
+.intro-image-container {
   display: flex;
   max-width: 20rem;
   align-items: center;
 
   img {
     border-radius: 50%;
-    filter: brightness(0%);
   }
 }
 
@@ -255,6 +247,7 @@ body {
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -312,11 +305,67 @@ body {
   }
 }
 
-/* 2.2 Canvas CSS */
+/* 2.2 About Me */
 
-#canvas1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--theme-primary);
+  height: var(--nav-height);
+  width: 100%;
+}
+
+.about-section {
+  background: linear-gradient(var(--theme-primary-opaque) 0%, white 100%);
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  gap: 15vw;
+  min-height: calc(100vh - var(--nav-height));
+
+  .card {
+    max-width: 40rem;
+  }
+}
+
+.about-image-container {
+  display: flex;
+  max-width: 20rem;
+  align-items: center;
+
+  img {
+    border-radius: 1rem;
+    box-shadow: 0px 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.about-text {
+  line-height: 2rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0px 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.1);
+}
+
+/* 9. Scroll Up Button */
+
+#scroll-top {
+  position: fixed;
+  right: -100%;
+  bottom: 1.5rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background: #fff;
+  color: rgb(13, 0, 44);
+  border: #121212 0.125rem solid;
+  border-radius: 50%;
+  transition: 1s right ease-in-out;
+  z-index: 1000;
+}
+#scroll-top.active {
+  right: 1.5rem;
 }

@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/25899d56ab.js"
       crossorigin="anonymous"
     ></script>
-    <script src="particles.js" defer></script>
+    <!-- <script src="particles.js" defer></script> -->
     <script src="main.js" defer></script>
     <title>Thomas' Portfolio v1</title>
   </head>
@@ -31,9 +31,9 @@
       <!-- Desktop Links -->
       <div class="link-container">
         <ul class="links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
         </ul>
       </div>
       <!-- Mobile Links -->
@@ -42,73 +42,106 @@
           <i id="menu-icon" class="fa-solid fa-bars fa-xl"></i>
         </div>
         <div class="mobile-links">
-          <ul class="">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
+          <ul>
+            <li><a class="mobile-link" href="#home">Home</a></li>
+            <li><a class="mobile-link" href="#about">About</a></li>
+            <li><a class="mobile-link" href="#projects">Projects</a></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Main -->
-    <div class="main">
-      <!-- Introduction (Card + Image) -->
-      <div class="intro-container">
-        <div class="card">
-          <div class="title-container">
-            <p class="title">Thomas Mol</p>
-            <p class="subtitle">Front-End Developer (in training)</p>
-          </div>
-          <!-- Buttons -->
-          <div class="button-container">
-            <a class="button" href="mailto:thomasmol078@gmail.com">Email Me</a>
+    <!-- Introduction (Card + Image) -->
+    <section class="intro-container" id="home">
+      <div class="card">
+        <div class="title-container">
+          <p class="title">Thomas Mol</p>
+          <p class="subtitle typewriter-effect">
+            Front-End Developer (in training)
+          </p>
+        </div>
+        <!-- Buttons -->
+        <div class="button-container">
+          <a class="button" href="mailto:thomasmol078@gmail.com">Email Me</a>
+          <a
+            class="button download"
+            href="/files/cv_mol_thomas.pdf"
+            download="cv_mol_thomas"
+          >
+            Download CV <i class="fa-solid fa-file-arrow-down"></i>
+          </a>
+        </div>
+        <!-- Social Media Links -->
+        <div class="socials-container">
+          <div class="socials-links">
             <a
-              class="button download"
-              href="/files/cv_mol_thomas.pdf"
-              download="cv_mol_thomas"
+              href="https://www.linkedin.com/in/thomas-mol-1b70741b7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-linkedin fa-lg"></i
+            ></a>
+            <a
+              href="https://github.com/thomas-mol"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-github fa-lg"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/thomas.mol.96"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Download CV <i class="fa-solid fa-file-arrow-down"></i>
-            </a>
-          </div>
-          <!-- Social Media Links -->
-          <div class="socials-container">
-            <div class="socials-links">
-              <a
-                href="https://www.linkedin.com/in/thomas-mol-1b70741b7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fa-brands fa-linkedin fa-lg"></i
-              ></a>
-              <a
-                href="https://github.com/thomas-mol"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fa-brands fa-github fa-lg"></i
-              ></a>
-              <a
-                href="https://www.facebook.com/thomas.mol.96"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-facebook fa-lg"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/thomas078/"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="fa-brands fa-instagram fa-lg"></i
-              ></a>
-            </div>
+              <i class="fa-brands fa-facebook fa-lg"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/thomas078/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-instagram fa-lg"></i
+            ></a>
           </div>
         </div>
-        <!-- Image -->
-        <div class="image-container">
-          <img src="img/thomas.png" alt="picture of thomas" />
-        </div>
-        <!-- Canvas Element -->
-        <canvas id="canvas1"></canvas>
       </div>
-    </div>
+      <!-- Image -->
+      <div class="intro-image-container">
+        <img src="img/thomas.png" alt="picture of thomas" />
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="about-section" id="about">
+      <p class="section-title">About Me</p>
+      <div class="about-container">
+        <div class="about-image-container">
+          <img src="img/about-picture.jpg" alt="full body picture of thomas" />
+        </div>
+        <div class="card">
+          <p class="about-text">
+            "Ik ben een gemotiveerde student, heb een passie voor IT en ben erg
+            leergierig op zowel studie- als werkvlak. <br />
+            Daarnaast ben ik echt een teamspeler, zowel op het korfbalveld
+            alsook op de werkvloer, maar ik werk net zo graag zelfstandig.
+            <br />
+            Verder sta ik positief in het leven en vind ik het belangrijk om
+            steeds bij te leren."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-section" id="projects">
+      <p class="section-title">Projects</p>
+      <div class="projects-container">
+        <!-- Add projects -->
+      </div>
+    </section>
+
+    <a
+      href="#home"
+      aria-label="ScrollTop"
+      class="fas fa-arrow-up"
+      id="scroll-top"
+    ></a>
   </body>
 </html>
