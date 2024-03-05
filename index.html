@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="icons/webpage.svg" type="image/x-icon" />
     <link rel="stylesheet" href="min-reset.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +18,7 @@
     ></script>
     <!-- <script src="particles.js" defer></script> -->
     <script src="main.js" defer></script>
-    <title>Thomas' Portfolio v1</title>
+    <title>Thomas' Portfolio</title>
   </head>
   <body>
     <!-- Navigation -->
@@ -51,18 +52,26 @@
       </div>
     </div>
 
-    <!-- Introduction (Card + Image) -->
-    <section class="intro-container" id="home">
-      <div class="card">
-        <div class="title-container">
-          <p class="title">Thomas Mol</p>
-          <p class="subtitle typewriter-effect">
-            Front-End Developer (in training)
-          </p>
-        </div>
+    <!-- Introduction Section -->
+    <section class="intro-section" id="home">
+      <!-- Intro Card -->
+      <div class="intro-card">
+        <!-- Name + Function -->
+        <h2 class="title">Thomas Mol</h2>
+        <h3 class="subtitle">Full-Stack Developer (in training)</h3>
+        <!-- Intro text -->
+        <p class="intro-text">
+          Welkom op mijn website! <br />
+          Dit portfolio dient er voor om mij kort voor te stellen. Maar ook mijn
+          huidige en toekomstige projecten te tonen op een overzichtelijke en
+          aantrekkelijke webpagina.
+        </p>
         <!-- Buttons -->
         <div class="button-container">
-          <a class="button" href="mailto:thomasmol078@gmail.com">Email Me</a>
+          <a class="button" href="mailto:thomasmol078@gmail.com"
+            >Email Me
+            <i class="fa-solid fa-envelope"></i>
+          </a>
           <a
             class="button download"
             href="/files/cv_mol_thomas.pdf"
@@ -71,7 +80,7 @@
             Download CV <i class="fa-solid fa-file-arrow-down"></i>
           </a>
         </div>
-        <!-- Social Media Links -->
+        <!-- Social Media Icons -->
         <div class="socials-container">
           <div class="socials-links">
             <a
@@ -86,57 +95,56 @@
               rel="noopener noreferrer"
               ><i class="fa-brands fa-github fa-lg"></i
             ></a>
+
             <a
+              href="https://www.instagram.com/thomas078/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-instagram fa-lg"></i></a
+            ><a
               href="https://www.facebook.com/thomas.mol.96"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i class="fa-brands fa-facebook fa-lg"></i
             ></a>
-            <a
-              href="https://www.instagram.com/thomas078/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-instagram fa-lg"></i
-            ></a>
           </div>
         </div>
       </div>
-      <!-- Image -->
-      <div class="intro-image-container">
-        <img src="img/thomas.png" alt="picture of thomas" />
+      <div class="img-container">
+        <img class="intro-image" src="/img/thomas2.png" alt="" />
       </div>
     </section>
 
     <!-- About Me -->
     <section class="about-section" id="about">
-      <p class="section-title">About Me</p>
-      <div class="about-container">
-        <div class="about-image-container">
-          <img src="img/about-picture.jpg" alt="full body picture of thomas" />
-        </div>
-        <div class="card">
-          <p class="about-text">
-            "Ik ben een gemotiveerde student, heb een passie voor IT en ben erg
-            leergierig op zowel studie- als werkvlak. <br />
-            Daarnaast ben ik echt een teamspeler, zowel op het korfbalveld
-            alsook op de werkvloer, maar ik werk net zo graag zelfstandig.
-            <br />
-            Verder sta ik positief in het leven en vind ik het belangrijk om
-            steeds bij te leren."
-          </p>
-        </div>
+      <div class="about-image-container">
+        <img src="img/IMG_0311.png" alt="picture of thomas" />
+      </div>
+      <div class="about-card">
+        <p class="section-title">About Me</p>
+
+        <p class="about-text">
+          "Ik ben een <em>gemotiveerde</em> student, heb een
+          <em>passie voor IT</em> en ben erg <em>leergierig</em> op zowel
+          studie- als werkvlak. Daarnaast ben ik echt een <em>teamspeler</em>,
+          zowel op het korfbalveld alsook op de werkvloer, maar ik werk net zo
+          graag <em>zelfstandig</em>.
+          <br />
+          Verder sta ik <em>positief</em> in het leven en vind ik het belangrijk
+          om steeds bij te leren."
+        </p>
       </div>
     </section>
 
     <!-- Projects -->
     <section class="projects-section" id="projects">
       <p class="section-title">Projects</p>
-      <div class="projects-container">
-        <!-- Add projects -->
-      </div>
+      <!-- Add projects -->
+      <div class="project-card">Project 1</div>
     </section>
 
+    <!-- Scroll To Top Button -->
     <a
       href="#home"
       aria-label="ScrollTop"
