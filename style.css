@@ -21,7 +21,7 @@
   --theme-light-accent: rgb(247, 247, 247);
   --theme-dark-accent: rgb(74, 68, 83);
 
-  --font-primary: "Space Grotesk", sans-serif;
+  --font-primary: "Epilogue", sans-serif;
 
   --nav-height: 3.625rem;
 
@@ -186,6 +186,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: var(--theme-light-shade);
 }
 
@@ -199,8 +200,8 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-  margin: 0 auto;
   padding: var(--nav-height) 1vw 0;
+  width: 100%;
   max-width: 70rem;
 }
 
@@ -236,7 +237,7 @@ section {
 
 .title {
   font-size: clamp(2em, 5vw, 3em);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--theme-primary);
   padding-top: 1rem;
 }
@@ -249,6 +250,7 @@ section {
 }
 
 .intro-text {
+  line-height: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -331,7 +333,6 @@ section {
   font-weight: 600;
   color: var(--theme-primary);
   height: var(--nav-height);
-  width: 100%;
   padding-top: 1rem;
 }
 
@@ -361,25 +362,64 @@ section {
 #projects {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
+  .section-title {
+    padding-top: 2rem;
+  }
 }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(11rem, 100%), 1fr));
-  gap: 1rem;
-  width: 50rem;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-auto-flow: row dense;
+  gap: 2rem;
+  padding: 0 1rem;
+  width: 100%;
 }
 
 .project-card {
-  display: flex;
-  justify-content: center;
+}
 
-  background-color: blue;
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
 
-  &:hover {
-    background-color: red;
+  .text {
+    color: white;
+    font-size: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
+}
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.project-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
 }
 
 /* 9. Scroll Up Button */
