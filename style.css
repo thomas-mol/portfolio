@@ -193,8 +193,7 @@ section {
   min-height: 100vh;
 }
 
-.intro-section,
-.about-section {
+.section {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -215,12 +214,12 @@ section {
 }
 
 @media (max-width: 800px) {
-  .intro-section {
+  .intro {
     flex-direction: column;
     gap: 2rem;
   }
 
-  .about-section {
+  .about {
     flex-direction: column-reverse;
     gap: 2rem;
   }
@@ -333,6 +332,7 @@ section {
   color: var(--theme-primary);
   height: var(--nav-height);
   width: 100%;
+  padding-top: 1rem;
 }
 
 .about-text {
@@ -358,16 +358,28 @@ section {
 
 /* 2.3 Projects */
 
-.projects-section {
-  background: linear-gradient(
-    transparent 33%,
-    var(--theme-primary-opaque) 100%
-  );
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(11rem, 100%), 1fr));
+  gap: 1rem;
+  width: 50rem;
 }
 
 .project-card {
   display: flex;
   justify-content: center;
+
+  background-color: blue;
+
+  &:hover {
+    background-color: red;
+  }
 }
 
 /* 9. Scroll Up Button */
