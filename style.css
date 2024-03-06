@@ -221,7 +221,6 @@ section {
 
 .section-wrapper:nth-child(even) {
   background-color: #fff;
-  z-index: -1;
 }
 
 .section {
@@ -441,11 +440,12 @@ section {
 .project-image {
   position: relative;
   aspect-ratio: 16 / 9;
-  &:hover {
-    cursor: pointer;
-    .overlay {
-      opacity: 1;
-    }
+}
+
+.project-image:hover {
+  cursor: pointer;
+  .overlay {
+    opacity: 1;
   }
 }
 
@@ -453,6 +453,15 @@ section {
   display: flex;
   flex-wrap: wrap;
   padding-top: 1rem;
+}
+
+.coming-soon {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #212121;
+  color: #fff;
 }
 
 /* Footer */
