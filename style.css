@@ -372,6 +372,10 @@ section {
   em {
     font-weight: 600;
   }
+
+  i {
+    color: var(--theme-primary);
+  }
 }
 
 .about-image-container {
