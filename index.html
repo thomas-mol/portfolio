@@ -119,7 +119,7 @@
     <div class="section-wrapper">
       <section class="section about" id="about">
         <div class="about-image-container">
-          <img src="img/about-img.png" alt="picture of thomas" />
+          <img loading="lazy" src="img/about-img.png" alt="picture of thomas" />
         </div>
         <div class="about-card hidden">
           <h2 class="section-title">About Me</h2>
@@ -139,7 +139,7 @@
     </div>
 
     <!-- Projects -->
-    <div class="section-wrapper wrapper-projects">
+    <div class="section-wrapper">
       <section class="section projects" id="projects">
         <p class="section-title">Projects</p>
         <!-- Add projects -->
@@ -148,9 +148,12 @@
           <div class="project-card hidden">
             <div class="project-image">
               <img src="img/projects/portfolio.png" alt="" />
-              <div class="overlay">
-                <p class="text">Github Repository</p>
-              </div>
+              <a
+                href="https://github.com/thomas-mol/portfolio"
+                target="_blank"
+                class="overlay"
+              ></a>
+              <div class="overlay-text">Link naar de Github repository</div>
             </div>
             <div class="project-info">
               <h4>Portfolio Website</h4>
@@ -160,9 +163,12 @@
           <div class="project-card hidden">
             <div class="project-image">
               <img src="img/projects/dichterbijdordt.png" alt="" />
-              <div class="overlay">
-                <p class="text">Go to website</p>
-              </div>
+              <a
+                href="https://dichterbijdordt.nl"
+                target="_blank"
+                class="overlay"
+              ></a>
+              <div class="overlay-text">Link naar de website</div>
             </div>
             <div class="project-info">
               <h4>Dichterbij Dordt Website</h4>
@@ -172,9 +178,6 @@
           <div class="project-card hidden">
             <div class="project-image">
               <div class="coming-soon">More to come!</div>
-              <div class="overlay">
-                <p class="text"></p>
-              </div>
             </div>
             <div class="project-info">
               <h4></h4>

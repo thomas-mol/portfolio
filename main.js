@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const iconContainer = document.querySelector(".icon-container");
   const mobileLinks = document.querySelector(".mobile-links");
 
+  // Open and close mobile menu
+
   iconContainer.addEventListener("click", () => {
     if (menuIcon.classList.contains("fa-bars")) {
       menuIcon.classList.remove("fa-bars");
@@ -14,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileLinks.classList.toggle("active");
   });
+
+  // Clicking a link in the mobile menu closes it
 
   document.querySelectorAll(".mobile-link").forEach((link) => {
     link.addEventListener("click", () => {
@@ -29,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Show scroll to top button
+
   window.addEventListener("scroll", () => {
     if (window.scrollY > 60) {
       document.querySelector("#scroll-top").classList.add("active");
@@ -36,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("#scroll-top").classList.remove("active");
     }
   });
+
+  // Fade-in animation
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
