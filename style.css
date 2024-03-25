@@ -393,10 +393,15 @@ section {
 
 /* 2.3 Projects */
 
+.wrapper-projects {
+  z-index: -1;
+}
+
 .projects {
   flex-direction: column;
   justify-content: flex-start;
   padding-bottom: 2rem;
+  z-index: 1;
 }
 
 .project-grid {
@@ -503,4 +508,33 @@ footer {
 }
 #scroll-top.active {
   right: 1.5rem;
+}
+
+/* Extra Animations & Transitions */
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(0.1rem);
+  transform: translateY(-5%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.project-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.project-card:nth-child(3) {
+  transition-delay: 400ms;
 }
